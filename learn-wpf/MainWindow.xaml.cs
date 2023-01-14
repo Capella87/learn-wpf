@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,24 @@ namespace learn_wpf
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri)
+                {
+                    UseShellExecute = true // In .NET Core, This property must be set to true
+                });
+                e.Handled = true;
+            }
+            catch (Exception e2)
+            {
+                Console.WriteLine(e2.Message);
+                Console.WriteLine(e2.StackTrace);
+                MessageBox.Show(e2.Message);
+            }
         }
     }
 }
