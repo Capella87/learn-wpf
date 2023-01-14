@@ -1,12 +1,20 @@
-﻿<Window x:Class="learn_wpf.MainWindow"
+<Window x:Class="learn_wpf.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:learn_wpf"
+        xmlns:sys="clr-namespace:System;assembly=mscorelib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="Tutorial" Height="200" Width="200">
+    <StackPanel>
+        <TextBlock Margin="10" TextWrapping="Wrap" Foreground="Blue" >This is a TextBlock
+        </TextBlock>
+        <TextBlock Margin="10" TextWrapping="Wrap">
+            The high-speed OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, WebGPU, and DirectX bindings library your mother warned you about.
+        </TextBlock>
+        <TextBlock Margin="10" TextTrimming="WordEllipsis">
+            The green TextBlock uses the TextTrimming property with the value CharacterEllipsis to make the TextBlock show an ellipsis (...) when it can't fit any more text into the control. This is a common way of showing that there's more text, but not enough room to show it. This is great when you have text that might be too long but you absolutely don't want it to use more than one line. As an alternative to CharacterEllipsis you may use WordEllipsis, which will trim the text at the end of the last possible word instead of the last possible character, preventing that a word is only shown in part.
+        </TextBlock>
+    </StackPanel>
 </Window>
