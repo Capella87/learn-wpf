@@ -10,6 +10,14 @@
     Width="350"
     Height="500"
     mc:Ignorable="d">
+    <Window.Resources>
+        <!--  Set padding option for all buttons in this window globally  -->
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Padding" Value="5,2" />
+        </Style>
+    </Window.Resources>
+
+
     <StackPanel>
         <TextBlock
             Margin="10"
@@ -50,5 +58,34 @@
                 Language="en-US"
                 TextWrapping="Wrap" />
         </DockPanel>
+
+        <TextBlock>
+            <LineBreak />
+        </TextBlock>
+
+        <Button
+            Background="Beige"
+            Click="HelloWorldButton_Click"
+            FontWeight="Bold"
+            Foreground="Blue">
+            Hello World!
+        </Button>
+
+        <TextBlock>
+            <LineBreak />
+        </TextBlock>
+
+        <Button MinHeight="50" Click="HelloWorldButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Formatted</TextBlock>
+                <TextBlock
+                    Margin="2,0"
+                    FontWeight="Bold"
+                    Foreground="Green">
+                    Button
+                </TextBlock>
+                <TextBlock FontStyle="Italic" Foreground="Gray">[Various]</TextBlock>
+            </StackPanel>
+        </Button>
     </StackPanel>
 </Window>

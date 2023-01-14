@@ -52,5 +52,10 @@ namespace learn_wpf
             txtStatus.Text += $"Selection is {textbox.SelectionLength} character(s) long\n";
             txtStatus.Text += $"Selected text: '{textbox.SelectedText}'";
         }
+
+        private void HelloWorldButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(this, "Hello World!", "Alert");
+        }
     }
 }
