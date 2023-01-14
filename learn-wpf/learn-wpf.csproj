@@ -6,6 +6,7 @@
     <RootNamespace>learn_wpf</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <Platforms>x64;ARM64</Platforms>
   </PropertyGroup>
 
    
