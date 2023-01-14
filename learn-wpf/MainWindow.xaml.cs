@@ -43,5 +43,14 @@ namespace learn_wpf
                 MessageBox.Show(e2.Message);
             }
         }
+
+        private void TextBox_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            textbox.SelectionOpacity = .5;
+            txtStatus.Text = $"Selection starts at character #{textbox!.SelectionStart}\n";
+            txtStatus.Text += $"Selection is {textbox.SelectionLength} character(s) long\n";
+            txtStatus.Text += $"Selected text: '{textbox.SelectedText}'";
+        }
     }
 }
