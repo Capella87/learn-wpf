@@ -7,8 +7,8 @@
     xmlns:local="clr-namespace:learn_wpf"
     xmlns:sys="clr-namespace:System;assembly=mscorelib"
     Title="Tutorial"
-    Width="200"
-    Height="200"
+    Width="350"
+    Height="500"
     mc:Ignorable="d">
     <StackPanel>
         <TextBlock
@@ -19,9 +19,20 @@
         </TextBlock>
         <TextBlock Margin="10" TextWrapping="Wrap">
             The high-speed OpenGL,<Hyperlink NavigateUri="https://www.khronos.org/opencl" RequestNavigate="Hyperlink_RequestNavigate">OpenCL</Hyperlink>
-            , OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, WebGPU, and DirectX bindings library your mother warned you about.</TextBlock>
+            , OpenAL, <Span FontStyle="Italic">OpenXR</Span>, GLFW, SDL, <Bold>Vulkan</Bold>, Assimp, WebGPU, and DirectX bindings library your mother warned you about.</TextBlock>
         <TextBlock Margin="10" TextTrimming="WordEllipsis">
-            The green TextBlock uses the TextTrimming property with the value CharacterEllipsis to make the TextBlock show an ellipsis (...) when it can't fit any more text into the control. This is a common way of showing that there's more text, but not enough room to show it. This is great when you have text that might be too long but you absolutely don't want it to use more than one line. As an alternative to CharacterEllipsis you may use WordEllipsis, which will trim the text at the end of the last possible word instead of the last possible character, preventing that a word is only shown in part.
+            The green <Span TextDecorations="Baseline" FontFamily="Cascadia Code" Background="LightBlue">TextBlock</Span> uses the TextTrimming property with the value CharacterEllipsis to make the TextBlock show an ellipsis (...) when it can't fit any more text into the control. This is a common way of showing that there's more text, but not enough room to show it. This is great when you have text that might be too long but you absolutely don't want it to use more than one line. As an alternative to CharacterEllipsis you may use WordEllipsis, which will trim the text at the end of the last possible word instead of the last possible character, preventing that a word is only shown in part.
         </TextBlock>
+
+        <Label Content="_Name:" Target="{Binding ElementName=txtName}" />
+        <TextBox Name="txtName" />
+        <Label Content="_Email:" Target="{Binding ElementName=txtEmail}" />
+        <TextBox Name="txtEmail" />
+        
+        <TextBlock>
+            <LineBreak />
+        </TextBlock>
+        
+        <TextBox AcceptsReturn="True" TextWrapping="Wrap" MinHeight="30" SpellCheck.IsEnabled="True" Language="en-US"/>
     </StackPanel>
 </Window>
