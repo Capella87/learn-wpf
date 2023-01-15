@@ -17,20 +17,20 @@
         </Style>
     </Window.Resources>
 
-
-    <StackPanel>
-        <TextBlock
+    <ScrollViewer HorizontalAlignment="Right" Margin="10, 10, 0, 0">
+        <StackPanel>
+            <TextBlock
             Margin="10"
             Foreground="Blue"
             TextWrapping="Wrap">
             This is a TextBlock
-        </TextBlock>
-        <TextBlock Margin="10" TextWrapping="Wrap">
+            </TextBlock>
+            <TextBlock Margin="10" TextWrapping="Wrap">
             The high-speed OpenGL,<Hyperlink NavigateUri="https://www.khronos.org/opencl" RequestNavigate="Hyperlink_RequestNavigate">OpenCL</Hyperlink>
             , OpenAL,<Span FontStyle="Italic">OpenXR</Span>
             , GLFW, SDL,<Bold>Vulkan</Bold>
             , Assimp, WebGPU, and DirectX bindings library your mother warned you about.</TextBlock>
-        <TextBlock Margin="10" TextTrimming="WordEllipsis">
+            <TextBlock Margin="10" TextTrimming="WordEllipsis">
             The green<Span
                 Background="LightBlue"
                 FontFamily="Cascadia Code"
@@ -39,53 +39,65 @@
             </Span>
             uses the TextTrimming property with the value CharacterEllipsis to make the TextBlock show an ellipsis (...) when it can't fit any more text into the control. This is a common way of showing that there's more text, but not enough room to show it. This is great when you have text that might be too long but you absolutely don't want it to use more than one line. As an alternative to CharacterEllipsis you may use WordEllipsis, which will trim the text at the end of the last possible word instead of the last possible character, preventing that a word is only shown in part.</TextBlock>
 
-        <Label Content="_Name:" Target="{Binding ElementName=txtName}" />
-        <TextBox Name="txtName" />
-        <Label Content="_Email:" Target="{Binding ElementName=txtEmail}" />
-        <TextBox Name="txtEmail" />
+            <Label Content="_Name:" Target="{Binding ElementName=txtName}" />
+            <TextBox Name="txtName" />
+            <Label Content="_Email:" Target="{Binding ElementName=txtEmail}" />
+            <TextBox Name="txtEmail" />
 
-        <TextBlock>
+            <TextBlock>
             <LineBreak />
-        </TextBlock>
+            </TextBlock>
 
-        <DockPanel>
-            <TextBox DockPanel.Dock="Top" SelectionChanged="TextBox_SelectionChanged" />
-            <TextBox
+            <DockPanel>
+                <TextBox DockPanel.Dock="Top" SelectionChanged="TextBox_SelectionChanged" />
+                <TextBox
                 Name="txtStatus"
                 MinHeight="30"
                 AcceptsReturn="True"
                 IsReadOnly="True"
                 Language="en-US"
                 TextWrapping="Wrap" />
-        </DockPanel>
+            </DockPanel>
 
-        <TextBlock>
+            <TextBlock>
             <LineBreak />
-        </TextBlock>
+            </TextBlock>
 
-        <Button
+            <Button
             Background="Beige"
             Click="HelloWorldButton_Click"
             FontWeight="Bold"
             Foreground="Blue">
-            Hello World!
-        </Button>
+                Hello World!
+            </Button>
 
-        <TextBlock>
+            <TextBlock>
             <LineBreak />
-        </TextBlock>
+            </TextBlock>
 
-        <Button MinHeight="50" Click="HelloWorldButton_Click">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock>Formatted</TextBlock>
-                <TextBlock
+            <Button MinHeight="50" Click="HelloWorldButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Formatted</TextBlock>
+                    <TextBlock
                     Margin="2,0"
                     FontWeight="Bold"
                     Foreground="Green">
                     Button
-                </TextBlock>
-                <TextBlock FontStyle="Italic" Foreground="Gray">[Various]</TextBlock>
+                    </TextBlock>
+                    <TextBlock FontStyle="Italic" Foreground="Gray">[Various]</TextBlock>
+                </StackPanel>
+            </Button>
+
+            <TextBlock>
+            <LineBreak />
+            </TextBlock>
+            <StackPanel Margin="10">
+                <Label FontWeight="Bold">Application Options</Label>
+                <CheckBox>Enable feature ABC</CheckBox>
+                <CheckBox IsChecked="True">Enable feature XYZ</CheckBox>
+                <CheckBox>Enable feature WWW</CheckBox>
             </StackPanel>
-        </Button>
-    </StackPanel>
+        </StackPanel>
+
+    </ScrollViewer>
 </Window>
