@@ -1,15 +1,16 @@
-<Window
-    x:Class="learn_wpf.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:learn_wpf"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:sys="clr-namespace:System;assembly=mscorelib"
-    Title="Tutorial"
-    Width="350"
-    Height="500"
-    mc:Ignorable="d">
+<Window x:Class="learn_wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:learn_wpf"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorelib"
+        Title="Tutorial"
+        Width="350"
+        Height="500"
+        mc:Ignorable="d"
+        >
+    <!--  Saves Resources for controls or media to reuse and maintain more efficiently.  -->
     <Window.Resources>
         <!--  Set padding option for all buttons in this window globally  -->
         <Style TargetType="{x:Type Button}">
@@ -17,27 +18,42 @@
         </Style>
     </Window.Resources>
 
-    <ScrollViewer HorizontalAlignment="Right" Margin="10, 10, 0, 0">
-        <StackPanel>
-            <TextBlock
-            Margin="10"
-            Foreground="Blue"
-            TextWrapping="Wrap">
-            This is a TextBlock
+    <ScrollViewer Margin="0,0,0,0" HorizontalAlignment="Stretch">
+        <StackPanel Margin="10,0,10,0">
+            <TextBlock Margin="0,10,0,0"
+                       FontSize="20"
+                       FontWeight="ExtraBold"
+                       Foreground="Blue"
+                       TextWrapping="Wrap">
+                .NET
             </TextBlock>
             <TextBlock Margin="10" TextWrapping="Wrap">
-            The high-speed OpenGL,<Hyperlink NavigateUri="https://www.khronos.org/opencl" RequestNavigate="Hyperlink_RequestNavigate">OpenCL</Hyperlink>
-            , OpenAL,<Span FontStyle="Italic">OpenXR</Span>
-            , GLFW, SDL,<Bold>Vulkan</Bold>
-            , Assimp, WebGPU, and DirectX bindings library your mother warned you about.</TextBlock>
+                <Span FontWeight="Bold">
+                    <Hyperlink NavigateUri="https://dot.net" RequestNavigate="Hyperlink_RequestNavigate">
+                        .NET
+                    </Hyperlink>
+                </Span>
+                is the
+                <Span FontStyle="Italic">
+                    free
+                </Span>
+                , open-source, cross-platform framework for building modern apps and powerful cloud services.</TextBlock>
+            <!--
+                Text Trimming
+                0 : None
+                1 : CharacterEllipsis; Trimmed at a character boundary.
+                2 : WordEllipsis; Trimmed at a word boundary.
+                When the string is trimmed, it shows (...) at the trimmed point.
+            -->
             <TextBlock Margin="10" TextTrimming="WordEllipsis">
-            The green<Span
-                Background="LightBlue"
-                FontFamily="Cascadia Code"
-                TextDecorations="Baseline">
-                TextBlock
-            </Span>
-            uses the TextTrimming property with the value CharacterEllipsis to make the TextBlock show an ellipsis (...) when it can't fit any more text into the control. This is a common way of showing that there's more text, but not enough room to show it. This is great when you have text that might be too long but you absolutely don't want it to use more than one line. As an alternative to CharacterEllipsis you may use WordEllipsis, which will trim the text at the end of the last possible word instead of the last possible character, preventing that a word is only shown in part.</TextBlock>
+                The green 
+                <Span Background="LightBlue"
+                      FontFamily="Cascadia Code"
+                      TextDecorations="Baseline">
+                    TextBlock
+                </Span>
+                uses the TextTrimming property with the value CharacterEllipsis to make the TextBlock show an ellipsis (...) when it can't fit any more text into the control. This is a common way of showing that there's more text, but not enough room to show it. This is great when you have text that might be too long but you absolutely don't want it to use more than one line. As an alternative to CharacterEllipsis you may use WordEllipsis, which will trim the text at the end of the last possible word instead of the last possible character, preventing that a word is only shown in part.
+            </TextBlock>
 
             <Label Content="_Name:" Target="{Binding ElementName=txtName}" />
             <TextBox Name="txtName" />
@@ -45,51 +61,48 @@
             <TextBox Name="txtEmail" />
 
             <TextBlock>
-            <LineBreak />
+                <LineBreak />
             </TextBlock>
 
             <DockPanel>
                 <TextBox DockPanel.Dock="Top" SelectionChanged="TextBox_SelectionChanged" />
-                <TextBox
-                Name="txtStatus"
-                MinHeight="30"
-                AcceptsReturn="True"
-                IsReadOnly="True"
-                Language="en-US"
-                TextWrapping="Wrap" />
+                <TextBox Name="txtStatus"
+                         MinHeight="30"
+                         AcceptsReturn="True"
+                         IsReadOnly="True"
+                         Language="en-US"
+                         TextWrapping="Wrap" />
             </DockPanel>
 
             <TextBlock>
-            <LineBreak />
+                <LineBreak />
             </TextBlock>
 
-            <Button
-            Background="Beige"
-            Click="HelloWorldButton_Click"
-            FontWeight="Bold"
-            Foreground="Blue">
+            <Button Background="Beige"
+                    Click="HelloWorldButton_Click"
+                    FontWeight="Bold"
+                    Foreground="Blue">
                 Hello World!
             </Button>
 
             <TextBlock>
-            <LineBreak />
+                <LineBreak />
             </TextBlock>
 
             <Button MinHeight="50" Click="HelloWorldButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock>Formatted</TextBlock>
-                    <TextBlock
-                    Margin="2,0"
-                    FontWeight="Bold"
-                    Foreground="Green">
-                    Button
+                    <TextBlock Margin="2,0"
+                               FontWeight="Bold"
+                               Foreground="Green">
+                        Button
                     </TextBlock>
                     <TextBlock FontStyle="Italic" Foreground="Gray">[Various]</TextBlock>
                 </StackPanel>
             </Button>
 
             <TextBlock>
-            <LineBreak />
+                <LineBreak />
             </TextBlock>
             <StackPanel Margin="10">
                 <Label FontWeight="Bold">Application Options</Label>
