@@ -1,0 +1,22 @@
+<Window x:Class="learn_wpf.CanvasPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:learn_wpf"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorelib"
+        Title="CanvasPanel"
+        Width="400"
+        Height="500"
+        mc:Ignorable="d">
+    <Canvas>
+        <!-- Button control can use Canvas configuration -->
+        <Button Canvas.Left="10">Button 1</Button>
+        <Button Canvas.Right="10">Button 2</Button>
+
+        <Ellipse Panel.ZIndex="2" Fill="Gainsboro" Canvas.Left="25" Canvas.Top="25" Width="340" Height="220" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Rectangle Panel.ZIndex="3" Fill="DeepSkyBlue" Width="70" Height="70" Canvas.Left="67" Canvas.Top="53" />
+        <Rectangle Panel.ZIndex="2" Fill="LightCoral" Width="70" Height="70" Canvas.Left="102" Canvas.Top="88" />
+        <Rectangle Panel.ZIndex="4" Fill="LightGreen" Width="70" Height="70" Canvas.Left="137" Canvas.Top="123" />
+    </Canvas>
+</Window>

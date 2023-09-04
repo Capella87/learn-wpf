@@ -84,7 +84,14 @@
                     Foreground="Blue">
                 Hello World!
             </Button>
-
+            <TextBlock>
+                <LineBreak />
+            </TextBlock>
+            <Button Background="#006B59"
+                    Click="Button_Click"
+                    FontWeight="Bold">
+                CanvasPanel
+            </Button>
             <TextBlock>
                 <LineBreak />
             </TextBlock>

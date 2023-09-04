@@ -57,5 +57,11 @@ namespace learn_wpf
         {
             MessageBox.Show(this, "Hello World!", "Alert");
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var subWindow = new CanvasPanel();
+            subWindow.ShowDialog();
+        }
     }
 }
